@@ -489,7 +489,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.66
+  m_Radius: 2.5
 --- !u!50 &963335497
 Rigidbody2D:
   serializedVersion: 2
@@ -670,7 +670,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.66
+  m_Radius: 2.5
 --- !u!114 &1859651418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,7 +715,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.67
+  m_Radius: 2.5
 --- !u!212 &1907513738
 SpriteRenderer:
   m_ObjectHideFlags: 0
