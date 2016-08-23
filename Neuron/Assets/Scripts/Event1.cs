@@ -11,6 +11,7 @@ public class Event1 : MonoBehaviour {
         if (other.gameObject.CompareTag("Neuron"))
         {
 			NeuronBase.GetComponent<SpriteRenderer>().material.color = Color.red;
+			InputManager.neuronVoltage = InputManager.neuronVoltage + 1.6f;
         }
     }
 
@@ -18,6 +19,7 @@ public class Event1 : MonoBehaviour {
 	{
 		{
 			NeuronBase.GetComponent<SpriteRenderer>().material.color = Color.white;
+			InputManager.neuronVoltage = InputManager.neuronVoltage - 1.6f;
 		}
 	}
 }

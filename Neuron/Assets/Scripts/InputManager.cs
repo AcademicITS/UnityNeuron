@@ -1,10 +1,19 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 public class InputManager : MonoBehaviour
 {
     private bool draggingItem = false;
     private GameObject draggedObject;
     private Vector2 touchOffset;
+
+	public Text UIvoltage;
+	public static float neuronVoltage = 0.0f;
+
+	void Start()
+	{
+		UIupdate();
+	}
 
     void Update()
     {
@@ -13,6 +22,7 @@ public class InputManager : MonoBehaviour
 			//Debug.Log ("Value: " + draggedObject.tag);
 			//Debug.Log ("Input Received");
 			DragOrPickUp();
+			UIupdate ();
         }
         else
         {
@@ -69,6 +79,10 @@ public class InputManager : MonoBehaviour
         draggingItem = false;
     }
 
+	void UIupdate()
+	{
+		UIvoltage.text = "Neuron: " + neuronVoltage.ToString () + " mV";
+	}
     
 
 }
