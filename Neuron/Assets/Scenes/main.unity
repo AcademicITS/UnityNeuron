@@ -401,9 +401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1a2e9d0d669954ea57a3521279e790, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIvoltage: {fileID: 1839662888}
-  posCharge: {fileID: 1156848602}
-  negCharge: {fileID: 333367374}
 --- !u!4 &581095078
 Transform:
   m_ObjectHideFlags: 0
@@ -522,6 +519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NeuronBase: {fileID: 1797576402}
+  ControlScript: {fileID: 1538692784}
 --- !u!1 &1156848602
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,6 +641,49 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!1 &1538692783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1538692785}
+  - 114: {fileID: 1538692784}
+  m_Layer: 0
+  m_Name: ScriptMain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1538692784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1538692783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0b20f10a8f948cb96d6811b0fec471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIvoltage: {fileID: 1839662888}
+  posCharge: {fileID: 1156848602}
+  negCharge: {fileID: 333367374}
+--- !u!4 &1538692785
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1538692783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
 --- !u!1 &1768283793
 GameObject:
   m_ObjectHideFlags: 0
@@ -974,6 +1015,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NeuronBase: {fileID: 1797576402}
+  ControlScript: {fileID: 1538692784}
 --- !u!1 &1907513736
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,3 +1121,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NeuronBase: {fileID: 1797576402}
+  ControlScript: {fileID: 1538692784}

@@ -4,6 +4,9 @@ using System.Collections;
 public class Event3 : MonoBehaviour {
 
 	public GameObject NeuronBase;
+	public ScriptMain ControlScript;
+
+	private float voltage = -1.8f;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -12,16 +15,25 @@ public class Event3 : MonoBehaviour {
         {
 			//NeuronBase.GetComponent<SpriteRenderer>().material.color = Color.yellow;
 			//see equivalent code in Event1.cs
-			InputManager.neuronVoltage = InputManager.neuronVoltage - 1.8f;
+			ScriptMain.neuronVoltage = ScriptMain.neuronVoltage + voltage;
+
+			//function to calculate total neuron voltage and update UI
+			ControlScript.UIupdate ();
+			//function to change neuron color based on total voltage
+			ControlScript.NeuronColor ();
         }
 	}
 
 	void OnTriggerExit2D(Collider2D other)
 	{
 		{
-			//NeuronBase.GetComponent<SpriteRenderer>().material.color = Color.white;
 			//see equivalent code in Event1.cs
-			InputManager.neuronVoltage = InputManager.neuronVoltage + 1.8f;
+			ScriptMain.neuronVoltage = ScriptMain.neuronVoltage - voltage;
+
+			//function to calculate total neuron voltage and update UI
+			ControlScript.UIupdate ();
+			//function to change neuron color based on total voltage
+			ControlScript.NeuronColor ();
 		}
 	}
 }

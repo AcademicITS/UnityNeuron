@@ -4,16 +4,22 @@ using System.Collections;
 public class Event1 : MonoBehaviour {
 
 	public GameObject NeuronBase;
+	public ScriptMain ControlScript;
+
+	private float voltage = 1.6f;
 
 	void OnTriggerEnter2D(Collider2D other)
     {
         //Check the provided Collider2D parameter other to see if it is tagged "Neuron", if it is...
         if (other.gameObject.CompareTag("Neuron"))
         {
-			//NeuronBase.GetComponent<SpriteRenderer>().material.color = Color.red;
-			//Increase total neuron voltage by 1.6 when this transmitter collides
-			InputManager.neuronVoltage = InputManager.neuronVoltage + 1.6f;
+			//Increase total neuron voltage by variable when this transmitter collides
+			ScriptMain.neuronVoltage = ScriptMain.neuronVoltage + voltage;
 
+			//function to calculate total neuron voltage and update UI
+			ControlScript.UIupdate ();
+			//function to change neuron color based on total voltage
+			ControlScript.NeuronColor ();
         }
 
     }
@@ -22,9 +28,13 @@ public class Event1 : MonoBehaviour {
 	{
 		if (other.gameObject.CompareTag("Neuron"))
 		{
-			//NeuronBase.GetComponent<SpriteRenderer>().material.color = Color.white;
-			//Decrease total neuron voltage by 1.6 when this transmitter exits
-			InputManager.neuronVoltage = InputManager.neuronVoltage - 1.6f;
+			//Decrease total neuron voltage by variable when this transmitter exits
+			ScriptMain.neuronVoltage = ScriptMain.neuronVoltage - voltage;
+
+			//function to calculate total neuron voltage and update UI
+			ControlScript.UIupdate ();
+			//function to change neuron color based on total voltage
+			ControlScript.NeuronColor ();
 		}
 	}
 }
