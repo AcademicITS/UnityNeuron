@@ -6,6 +6,11 @@ public class InputManager : MonoBehaviour
     private GameObject draggedObject;
     private Vector2 touchOffset;
 
+	void Start()
+	{
+		
+	}
+
     void Update()
     {
 		if ((HasInput))
@@ -68,7 +73,5 @@ public class InputManager : MonoBehaviour
     {
         draggingItem = false;
     }
-
-    
 
 }
